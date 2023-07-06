@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('wall.jpeg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 20px;
+  height: 100vh;
+  
+}
+h1{
+  font-size: 25px;
+  text-align: center;
+  white-space: nowrap;
+  color: antiquewhite;
+}
+h1 span {
+  color: red; /* Make the letters red */
+  font-size: 28px;
+  font-weight: bold;
+  
+}
+
+table{
+  height: 250px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 18px;
+  color: antiquewhite;
+}
+textarea::-webkit-scrollbar {
+  display: none;
+}
+
+textarea {
+  width: 600px;
+  height: 100px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  background-color: rgba(49, 49, 49, 0.788);
+  color: white;
+  
+}
+textarea:focus {
+  border-color: aqua; /* Change border color when focused */
+}
+
+.container {
+  width: 660px;
+  margin: auto;
+  padding: 30px;
+  background-color: rgba(45, 45, 45, 0.33);
+  
+}
+
+.box {
+  width: 600px;
+
+  overflow: auto; /* Enable scrolling when content exceeds the height */
+  font-size: 18px;
+
+  padding: 10px;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  text-decoration: none;
+}
