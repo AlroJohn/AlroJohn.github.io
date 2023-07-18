@@ -20,5 +20,5 @@ function assignSymbolToLetter(symbol) {
     outputElement.textContent = decryptedText;
   }
   
-  decryptSymbols();
+  decryptSymbols();z
   

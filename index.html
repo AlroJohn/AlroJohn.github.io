@@ -5,33 +5,190 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel = "shortcut icon" href = "Why me.jfif" type="image/x-icon" />
-    <title>Alchemy of Language: Rendering Obfuscated</title>
-    <link rel="stylesheet" href="styless.css">
+    <link rel="shortcut icon" href="Why me.jfif" type="image/x-icon" />
+    <title>Alchemy of Language: Reverse Encryption</title>
+    <link rel="stylesheet" href="styl.css">
 </head>
 <body>
-    <div class="container">
+    <header>
+        <nav class="d-flex align-items-center justify-content-between">
+
+            <a href="decrypt.html">Go to DECRYPTION</a>
+        </nav>
+    </header>
+    <div class="image_title">
         <h1><span>A</span>lchemy of <span>L</span>anguage: <span>R</span>endering <span>O</span>bfuscated</h1>
-        <br>
-        <br>
+        <img src="bg.png" alt="" srcset="">
+    </div>
+    <div class="container">
+        <br><br>
         <table cellpadding="10">
             <tr>
-                <td><label for="input">Enter symbols:</label></td>
+                <td><label for="input">Enter capital letters and symbols:</label></td>
             </tr>
             <tr>
-                <td><textarea id="input" oninput="decryptSymbols()"></textarea></td>
+                <td><textarea id="input" oninput="encryptLetters()" placeholder="Encrypting message"></textarea></td>
             </tr>
             <tr>
-                <td><label >Decrypted letters:</label></td>
+                <td><label>Encrypted Letters and Symbols:</label></td>
             </tr>
-            <tr class="box" >
-                <td><textarea id="output" style="height: 250px" readonly></textarea></td>
+            <tr class="box">
+                <td><textarea id="encrypted-output" style="height: 250px" readonly></textarea></td>
             </tr>
         </table>
     </div>
 
-    <!-- Include your JavaScript files -->
-    <script src="script.js"></script>
-    <script src="symbol.js"></script>
+    <script>
+        function encryptLetters() {
+            const inputElement = document.getElementById('input');
+            const outputElement = document.getElementById('encrypted-output');
+        
+            const userInput = inputElement.value;
+        
+            const encryptedText = userInput
+            .split('')
+            .map(letter => assignLetterToSymbol(letter))
+            .join('');
+        
+            outputElement.textContent = encryptedText;
+        }
+        
+        function assignLetterToSymbol(letter) {
+            const letterToSymbolMap = {
+                // Letter to Symbol mapping
+                'A': '`',
+                'B': '~',
+                'C': '(',
+                'D': ')',
+                'E': '{',
+                'F': '}',
+                'G': '@',
+                'H': '#',
+                'I': '|',
+                'J': '?',
+                'K': '<',
+                'L': '>',
+                'M': ';',
+                'N': ':',
+                'O': '*',
+                'P': '[',
+                'Q': ']',
+                'R': '/',
+                'S': '$',
+                'T': '&',
+                'U': '.',
+                'V': '^',
+                'W': '-',
+                'X': '+',
+                'Y': '=',
+                'Z': '_',
+
+                '`': 'Q',
+                '~': 'W',
+                '(': 'E',
+                ')': 'R',
+                '{': 'T',
+                '}': 'Y',
+                '@': 'U',
+                '#': 'I',
+                '|': 'O',
+                '?': 'P',
+                '<': 'A',
+                '>': 'S',
+                ';': 'D',
+                ':': 'F',
+                '*': 'G',
+                '[': 'H',
+                ']': 'J',
+                '/': 'K',
+                '$': 'L',
+                '&': 'Z',
+                '.': 'X',
+                '^': 'C',
+                '-': 'V',
+                '+': 'B',
+                '=': 'N',
+                '_': 'M',
+                
+                
+            };
+        
+            if (letter in letterToSymbolMap) {
+                return letterToSymbolMap[letter];
+            } else {
+                return letter;
+            }
+        }
+        
+        encryptLetters();
+    </script>
+    <script>
+        function assignSymbolToLetter(symbol) {
+            const symbolToLetterMap = {
+                // Symbol to Letter mapping
+                '`': 'A',
+                '~': 'B',
+                '(': 'C',
+                ')': 'D',
+                '{': 'E',
+                '}': 'F',
+                '@': 'G',
+                '#': 'H',
+                '|': 'I',
+                '?': 'J',
+                '<': 'K',
+                '>': 'L',
+                ';': 'M',
+                ':': 'N',
+                '*': 'O',
+                '[': 'P',
+                ']': 'Q',
+                '/': 'R',
+                '$': 'S',
+                '&': 'T',
+                '.': 'U',
+                '^': 'V',
+                '-': 'W',
+                '+': 'X',
+                '=': 'Y',
+                '_': 'Z',
+
+                
+
+                'Q': '`',
+                'W': '~',
+                'E': '(',
+                'R': ')',
+                'T': '{',
+                'Y': '}',
+                'U': '@',
+                'I': '#',
+                'O': '|',
+                'P': '?',
+                'A': '<',
+                'S': '>',
+                'D': ';',
+                'F': ':',
+                'G': '*',
+                'H': '[',
+                'J': ']',
+                'K': '/',
+                'L': '$',
+                'Z': '&',
+                'X': '.',
+                'C': '^',
+                'V': '-',
+                'B': '+',
+                'N': '=',
+                'M': '_',
+            };
+        
+            if (symbol in symbolToLetterMap) {
+                return symbolToLetterMap[symbol];
+            } else {
+                return symbol;
+            }
+        }
+    </script>
 </body>
 </html>
