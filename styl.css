@@ -46,7 +46,8 @@ table{
 label {
   font-weight: 200;
   font-size: 18px;
-  color: antiquewhite;
+  color: rgba(253, 240, 243, 0.973);
+  font-weight: 600;
 }
 textarea::-webkit-scrollbar {
   display: none;

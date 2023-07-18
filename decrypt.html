@@ -12,7 +12,6 @@
 <body>
     <header>
         <nav class="d-flex align-items-center justify-content-between">
-            
             <a href="index.html">Go to ENCRYPTION</a>
         </nav>
     </header>
@@ -24,15 +23,15 @@
         <br><br>
         <table cellpadding="10">
             <tr>
-                <td><label for="input">Enter symbols and capital letters:</label></td>
+                <td><label for="input" id="inputLabel">Enter symbols and capital letters:</label></td>
             </tr>
             <tr>
                 <td><textarea id="input" oninput="decryptSymbols()" placeholder="Decrypting message"></textarea></td>
             </tr>
             <tr>
-                <td><label >Decrypted Letters and Symbols:</label></td>
+                <td><label id="outputLabel">Decrypted Letters and Symbols:</label></td>
             </tr>
-            <tr class="box" >
+            <tr class="box">
                 <td><textarea id="output" style="height: 250px" readonly></textarea></td>
             </tr>
         </table>
@@ -42,24 +41,42 @@
     <script>
         function assignSymbolToLetter(symbol) {
             if (symbol in symbolToLetterMap) {
-            return symbolToLetterMap[symbol];
+                return symbolToLetterMap[symbol];
             } else {
-            return symbol;
+                return symbol;
             }
         }
-        
+
         function decryptSymbols() {
             const inputElement = document.getElementById('input');
             const outputElement = document.getElementById('output');
-        
+            const inputLabel = document.getElementById('inputLabel');
+
             const userInput = inputElement.value;
-        
+
             const decryptedText = userInput
-            .split('')
-            .map(symbol => assignSymbolToLetter(symbol))
-            .join('');
-        
+                .split('')
+                .map(symbol => assignSymbolToLetter(symbol))
+                .join('');
+
             outputElement.textContent = decryptedText;
+
+            if (userInput.length > 0) {
+                inputLabel.style.transition = 'color 0.5s ease-in-out'; // Add transition property
+                inputLabel.style.color = 'red';
+                
+            } else {
+                inputLabel.style.transition = 'color 0.5s ease-in-out'; // Remove transition property when there is no input
+                inputLabel.style.color = ''; // Reset to the default label color
+            }
+            if (userInput.length > 0) {
+                outputLabel.style.transition = 'color 0.5s ease-in-out'; // Add transition property
+                outputLabel.style.color = 'red';
+                
+            } else {
+                outputLabel.style.transition = 'color 0.5s ease-in-out'; // Remove transition property when there is no input
+                outputLabel.style.color = ''; // Reset to the default label color
+            }
         }
         
         decryptSymbols();
@@ -67,66 +84,66 @@
     <script>
         function assignSymbolToLetter(symbol) {
             const symbolToLetterMap = {
-            //This is Symbol to Letter
-            '`': 'A',
-            '~': 'B',
-            '(': 'C',
-            ')': 'D',
-            '{': 'E',
-            '}': 'F',
-            '@': 'G',
-            '#': 'H',
-            '|': 'I',
-            '?': 'J',
-            '<': 'K',
-            '>': 'L',
-            ';': 'M',
-            ':': 'N',
-            '*': 'O',
-            '[': 'P',
-            ']': 'Q',
-            '/': 'R',
-            '$': 'S',
-            '&': 'T',
-            '.': 'U',
-            '^': 'V',
-            '-': 'W',
-            '+': 'X',
-            '=': 'Y',
-            '_': 'Z',
+                //This is Symbol to Letter
+                '`': 'A',
+                '~': 'B',
+                '(': 'C',
+                ')': 'D',
+                '{': 'E',
+                '}': 'F',
+                '@': 'G',
+                '#': 'H',
+                '|': 'I',
+                '?': 'J',
+                '<': 'K',
+                '>': 'L',
+                ';': 'M',
+                ':': 'N',
+                '*': 'O',
+                '[': 'P',
+                ']': 'Q',
+                '/': 'R',
+                '$': 'S',
+                '&': 'T',
+                '.': 'U',
+                '^': 'V',
+                '-': 'W',
+                '+': 'X',
+                '=': 'Y',
+                '_': 'Z',
 
-            //This is Letter to Symbol
-            'Q': '`',
-            'W': '~',
-            'E': '(',
-            'R': ')',
-            'T': '{',
-            'Y': '}',
-            'U': '@',
-            'I': '#',
-            'O': '|',
-            'P': '?',
-            'A': '<',
-            'S': '>',
-            'D': ';',
-            'F': ':',
-            'G': '*',
-            'H': '[',
-            'J': ']',
-            'K': '/',
-            'L': '$',
-            'Z': '&',
-            'X': '.',
-            'C': '^',
-            'V': '-',
-            'B': '+',
-            'N': '=',
-            'M': '_',
+                //This is Letter to Symbol
+                'Q': '`',
+                'W': '~',
+                'E': '(',
+                'R': ')',
+                'T': '{',
+                'Y': '}',
+                'U': '@',
+                'I': '#',
+                'O': '|',
+                'P': '?',
+                'A': '<',
+                'S': '>',
+                'D': ';',
+                'F': ':',
+                'G': '*',
+                'H': '[',
+                'J': ']',
+                'K': '/',
+                'L': '$',
+                'Z': '&',
+                'X': '.',
+                'C': '^',
+                'V': '-',
+                'B': '+',
+                'N': '=',
+                'M': '_',
             };
             if (symbol in symbolToLetterMap) {
-            return symbolToLetterMap[symbol];
+                return symbolToLetterMap[symbol];
             } else {
-            return symbol;
+                return symbol;
             }
         }
     </script>
