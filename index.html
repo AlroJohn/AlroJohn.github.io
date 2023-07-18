@@ -12,7 +12,6 @@
 <body>
     <header>
         <nav class="d-flex align-items-center justify-content-between">
-
             <a href="decrypt.html">Go to DECRYPTION</a>
         </nav>
     </header>
@@ -24,13 +23,13 @@
         <br><br>
         <table cellpadding="10">
             <tr>
-                <td><label for="input">Enter capital letters and symbols:</label></td>
+                <td><label for="input" id="inputLabel">Enter capital letters and symbols:</label></td>
             </tr>
             <tr>
                 <td><textarea id="input" oninput="encryptLetters()" placeholder="Encrypting message"></textarea></td>
             </tr>
             <tr>
-                <td><label>Encrypted Letters and Symbols:</label></td>
+                <td><label id="outputLabel">Encrypted Letters and Symbols:</label></td>
             </tr>
             <tr class="box">
                 <td><textarea id="encrypted-output" style="height: 250px" readonly></textarea></td>
@@ -42,15 +41,33 @@
         function encryptLetters() {
             const inputElement = document.getElementById('input');
             const outputElement = document.getElementById('encrypted-output');
+            const inputLabel = document.getElementById('inputLabel');
         
             const userInput = inputElement.value;
         
             const encryptedText = userInput
-            .split('')
-            .map(letter => assignLetterToSymbol(letter))
-            .join('');
+                .split('')
+                .map(letter => assignLetterToSymbol(letter))
+                .join('');
         
             outputElement.textContent = encryptedText;
+        
+            if (userInput.length > 0) {
+                inputLabel.style.transition = 'color 0.5s ease-in-out'; // Add transition property
+                inputLabel.style.color = 'red';
+                
+            } else {
+                inputLabel.style.transition = 'color 0.5s ease-in-out'; // Remove transition property when there is no input
+                inputLabel.style.color = ''; // Reset to the default label color
+            }
+            if (userInput.length > 0) {
+                outputLabel.style.transition = 'color 0.5s ease-in-out'; // Add transition property
+                outputLabel.style.color = 'red';
+                
+            } else {
+                outputLabel.style.transition = 'color 0.5s ease-in-out'; // Remove transition property when there is no input
+                outputLabel.style.color = ''; // Reset to the default label color
+            }
         }
         
         function assignLetterToSymbol(letter) {
@@ -109,8 +126,6 @@
                 '+': 'B',
                 '=': 'N',
                 '_': 'M',
-                
-                
             };
         
             if (letter in letterToSymbolMap) {
@@ -152,8 +167,6 @@
                 '+': 'X',
                 '=': 'Y',
                 '_': 'Z',
-
-                
 
                 'Q': '`',
                 'W': '~',
