@@ -93,6 +93,7 @@ textarea:focus {
 }
 
 header nav a {
+  margin: 10px auto;
   border-top: none;
   border-left: none;
   border-right: none;

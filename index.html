@@ -7,12 +7,12 @@
     rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="shortcut icon" href="Why me.jfif" type="image/x-icon" />
     <title>Alchemy of Language: Reverse Encryption</title>
-    <link rel="stylesheet" href="styl.css">
+    <link rel="stylesheet" href="stylee.css">
 </head>
 <body>
     <header>
         <nav class="d-flex align-items-center justify-content-between">
-            <a href="decrypt.html">Go to DECRYPTION</a>
+            <a href="decrypt.html">DECRYPT</a>
         </nav>
     </header>
     <div class="image_title">
@@ -26,7 +26,7 @@
                 <td><label for="input" id="inputLabel">Enter capital letters and symbols:</label></td>
             </tr>
             <tr>
-                <td><textarea id="input" oninput="encryptLetters()" placeholder="Encrypting message"></textarea></td>
+                <td><textarea id="input" oninput="encryptLetters()" placeholder="Encrypting your message"></textarea></td>
             </tr>
             <tr>
                 <td><label id="outputLabel">Encrypted Letters and Symbols:</label></td>
@@ -36,7 +36,6 @@
             </tr>
         </table>
     </div>
-
     <script>
         function encryptLetters() {
             const inputElement = document.getElementById('input');
