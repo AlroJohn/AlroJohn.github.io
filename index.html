@@ -5,202 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="shortcut icon" href="MYTH.jpg" type="image/x-icon" />
+    <!-- icon -->
+    <link rel="shortcut icon" href="image/MYTH.jpg" type="image/x-icon" />
     <title>Alchemy of Language: Reverse Encryption</title>
     <link rel="stylesheet" href="stylee.css">
 </head>
 <body>
-    <header>
-        <nav class="d-flex align-items-center justify-content-between">
-            <a href="decrypt.html">DECRYPT</a>
-        </nav>
-    </header>
     <div class="image_title">
         <h1><span>A</span>lchemy of <span>L</span>anguage: <span>R</span>endering <span>O</span>bfuscated</h1>
-        <img src="new.jpeg" alt="" srcset="">
+        <a href="decrypt.html"><img src="image/new.jpeg" alt="click-me" style="width: 490px; height: 590px;"></a>
     </div>
-    <div class="container">
+    <div class="container encrypt-container">
         <br><br>
         <table cellpadding="10">
             <tr>
-                <td><label for="input" id="inputLabel">Enter capital letters and symbols:</label></td>
+                <td><label for="input" >Enter message to be <span id="inputLabel">encrypted:</span></label></td>
             </tr>
             <tr>
-                <td><textarea id="input" oninput="encryptLetters()" placeholder="Encrypt your message"></textarea></td>
+                <td><textarea id="input" oninput="encryptLetters()" placeholder="Encrypt your message..."></textarea></td>
             </tr>
             <tr>
-                <td><label id="outputLabel">Encrypted Letters and Symbols:</label></td>
+                <td><label>Result of <span id="outputLabel">encrypted</span> message:</label></td>
             </tr>
             <tr class="box">
-                <td><textarea id="encrypted-output" style="height: 250px" readonly></textarea></td>
+                <td><textarea id="encrypted-output" style="height: 200px" readonly></textarea></td>
             </tr>
         </table>
     </div>
-    <script>
-        function encryptLetters() {
-            const inputElement = document.getElementById('input');
-            const outputElement = document.getElementById('encrypted-output');
-            const inputLabel = document.getElementById('inputLabel');
-        
-            const userInput = inputElement.value;
-        
-            const encryptedText = userInput
-                .split('')
-                .map(letter => assignLetterToSymbol(letter))
-                .join('');
-        
-            outputElement.textContent = encryptedText;
-        
-            if (userInput.length > 0) {
-                inputLabel.style.transition = 'color 0.5s ease-in-out'; // Add transition property
-                inputLabel.style.color = 'red';
-                
-            } else {
-                inputLabel.style.transition = 'color 0.5s ease-in-out'; // Remove transition property when there is no input
-                inputLabel.style.color = ''; // Reset to the default label color
-            }
-            if (userInput.length > 0) {
-                outputLabel.style.transition = 'color 0.5s ease-in-out'; // Add transition property
-                outputLabel.style.color = 'red';
-                
-            } else {
-                outputLabel.style.transition = 'color 0.5s ease-in-out'; // Remove transition property when there is no input
-                outputLabel.style.color = ''; // Reset to the default label color
-            }
-        }
-        
-        function assignLetterToSymbol(letter) {
-            const letterToSymbolMap = {
-                // Letter to Symbol mapping
-                'A': '`',
-                'B': '~',
-                'C': '(',
-                'D': ')',
-                'E': '{',
-                'F': '}',
-                'G': '@',
-                'H': '#',
-                'I': '|',
-                'J': '?',
-                'K': '<',
-                'L': '>',
-                'M': ';',
-                'N': ':',
-                'O': '*',
-                'P': '[',
-                'Q': ']',
-                'R': '/',
-                'S': '$',
-                'T': '&',
-                'U': '.',
-                'V': '^',
-                'W': '-',
-                'X': '+',
-                'Y': '=',
-                'Z': '_',
+    <div class="notification">Click the image below</div>
 
-                '`': 'Q',
-                '~': 'W',
-                '(': 'E',
-                ')': 'R',
-                '{': 'T',
-                '}': 'Y',
-                '@': 'U',
-                '#': 'I',
-                '|': 'O',
-                '?': 'P',
-                '<': 'A',
-                '>': 'S',
-                ';': 'D',
-                ':': 'F',
-                '*': 'G',
-                '[': 'H',
-                ']': 'J',
-                '/': 'K',
-                '$': 'L',
-                '&': 'Z',
-                '.': 'X',
-                '^': 'C',
-                '-': 'V',
-                '+': 'B',
-                '=': 'N',
-                '_': 'M',
-            };
-        
-            if (letter in letterToSymbolMap) {
-                return letterToSymbolMap[letter];
-            } else {
-                return letter;
-            }
-        }
-        
-        encryptLetters();
-    </script>
+    <!-- Your SVG icon -->
+    <div class="icon-container">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+    </svg>
+    </div>
     <script>
-        function assignSymbolToLetter(symbol) {
-            const symbolToLetterMap = {
-                // Symbol to Letter mapping
-                '`': 'A',
-                '~': 'B',
-                '(': 'C',
-                ')': 'D',
-                '{': 'E',
-                '}': 'F',
-                '@': 'G',
-                '#': 'H',
-                '|': 'I',
-                '?': 'J',
-                '<': 'K',
-                '>': 'L',
-                ';': 'M',
-                ':': 'N',
-                '*': 'O',
-                '[': 'P',
-                ']': 'Q',
-                '/': 'R',
-                '$': 'S',
-                '&': 'T',
-                '.': 'U',
-                '^': 'V',
-                '-': 'W',
-                '+': 'X',
-                '=': 'Y',
-                '_': 'Z',
-
-                'Q': '`',
-                'W': '~',
-                'E': '(',
-                'R': ')',
-                'T': '{',
-                'Y': '}',
-                'U': '@',
-                'I': '#',
-                'O': '|',
-                'P': '?',
-                'A': '<',
-                'S': '>',
-                'D': ';',
-                'F': ':',
-                'G': '*',
-                'H': '[',
-                'J': ']',
-                'K': '/',
-                'L': '$',
-                'Z': '&',
-                'X': '.',
-                'C': '^',
-                'V': '-',
-                'B': '+',
-                'N': '=',
-                'M': '_',
-            };
-        
-            if (symbol in symbolToLetterMap) {
-                return symbolToLetterMap[symbol];
-            } else {
-                return symbol;
-            }
+        const icon = document.querySelector('.bi');
+        const notification = document.querySelector('.notification');
+      
+        // Function to show the notification
+        function showNotification() {
+          notification.classList.add('visible');
         }
-    </script>
+      
+        // Function to hide the notification
+        function hideNotification() {
+          notification.classList.remove('visible');
+        }
+      
+        // Add event listener for the hover event
+        icon.addEventListener('mouseenter', showNotification);
+      
+        // Add event listener for the mouseout event to hide the notification
+        icon.addEventListener('mouseleave', hideNotification);
+      </script>
+    <!-- Include your JavaScript files -->
+    <script src="index.js"></script>
+    <script src="index2.js"></script>
+
+
 </body>
 </html>
