@@ -36,7 +36,7 @@ h1 span {
   margin-left: -785px;
 }
 .image_title{
-  margin: 50px 800px;
+  margin: 20px 800px;
 }
 .image_title img{
   margin: -30px 60px;
@@ -49,7 +49,7 @@ h1 span {
   height: 35px;
   width: 35px;
   position: absolute;
-  top: 40px;
+  bottom: 40px;
   right: 40px;
   cursor: pointer; /* Add cursor: pointer to indicate it's clickable */
   transition: all .5s ease-in-out;
@@ -65,7 +65,7 @@ h1 span {
   padding: 10px;
   border-radius: 5px;
   position: absolute;
-  top: 65px;
+  bottom: 65px;
   right: 60px;
   opacity: 0%;
   pointer-events: none; /* Ensure the element doesn't interfere with mouse events */
@@ -118,7 +118,7 @@ textarea:focus{
 }
 .container {
   width: 660px;
-  margin: -560px 80px;
+  margin: -530px 80px;
   padding: 30px;
   background-color: rgb(63, 88, 86);
   border-radius: 10px;
@@ -127,7 +127,7 @@ textarea:focus{
 }
 .encrypt-container{
   width: 660px;
-  margin: -600px 80px;
+  margin: -570px 80px;
   padding: 30px;
   background-color: rgb(63, 88, 86);
   border-radius: 10px;
