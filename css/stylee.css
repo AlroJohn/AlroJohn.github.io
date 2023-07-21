@@ -44,7 +44,7 @@ h1 span {
   height: 550px;
   opacity: calc(75%);
 }
-.bi {
+svg {
   color: white;
   height: 35px;
   width: 35px;
@@ -54,7 +54,7 @@ h1 span {
   cursor: pointer; /* Add cursor: pointer to indicate it's clickable */
   transition: all .5s ease-in-out;
 }
-.bi:hover{
+svg:hover{
   color: aqua;
 }
 
@@ -192,3 +192,18 @@ header nav a:hover::before,
 header nav a:hover::after {
   width: 50%;
 }
+
+.icon-container svg{
+  vertical-align: middle;
+  animation: pulseColor 1s infinite alternate;
+}
+@keyframes pulseColor {
+  from {
+      fill: white;
+  }
+  to {
+      fill: rgb(255, 213, 0);
+  }
+}
+
+
